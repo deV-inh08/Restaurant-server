@@ -88,8 +88,8 @@ const start = async () => {
     })
     await initOwnerAccount()
     await fastify.listen({
-      port: envConfig.PORT,
-      host: envConfig.DOCKER ? '0.0.0.0' : 'localhost'
+      port: envConfig.PORT || 4000,
+      host: '0.0.0.0'
     })
     console.log(`Server đang chạy: ${API_URL}`)
   } catch (err) {

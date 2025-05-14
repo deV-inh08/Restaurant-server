@@ -37,7 +37,6 @@ const configSchema = z.object({
   GOOGLE_AUTHORIZED_REDIRECT_URI: z.string(),
   PRODUCTION: z.enum(['true', 'false']).transform((val) => val === 'true'),
   DOCKER: z.enum(['true', 'false']).transform((val) => val === 'true'),
-  PRODUCTION_URL: z.string(),
   SERVER_TIMEZONE: z.string()
 })
 
@@ -48,14 +47,12 @@ if (!configServer.success) {
   throw new Error('Các giá trị khai báo trong file .env không hợp lệ')
 }
 const envConfig = configServer.data
-export const API_URL = envConfig.PRODUCTION
-  ? envConfig.PRODUCTION_URL
-  : `${envConfig.PROTOCOL}://${envConfig.DOMAIN}:${envConfig.PORT}`
+export const API_URL = `${envConfig.PROTOCOL}://${envConfig.DOMAIN}:${envConfig.PORT}`
 export default envConfig
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace NodeJS {
-    interface ProcessEnv extends z.infer<typeof configSchema> {}
+    interface ProcessEnv extends z.infer<typeof configSchema> { }
   }
 }

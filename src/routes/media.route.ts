@@ -1,7 +1,7 @@
 import { pauseApiHook, requireEmployeeHook, requireLoginedHook, requireOwnerHook } from '@/hooks/auth.hooks'
 import { FastifyInstance, FastifyPluginOptions } from 'fastify'
 import fastifyMultipart from '@fastify/multipart'
-import { uploadFileSupabase, uploadImage } from '@/controllers/media.controller'
+import { uploadFileSupabase } from '@/controllers/media.controller'
 import { UploadImageRes, UploadImageResType } from '@/schemaValidations/media.schema'
 
 export default async function mediaRoutes(fastify: FastifyInstance, options: FastifyPluginOptions) {

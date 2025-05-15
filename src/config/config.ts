@@ -38,7 +38,13 @@ const configSchema = z.object({
   PRODUCTION: z.enum(['true', 'false']).transform((val) => val === 'true'),
   DOCKER: z.enum(['true', 'false']).transform((val) => val === 'true'),
   PRODUCTION_URL: z.string(),
-  SERVER_TIMEZONE: z.string()
+  SERVER_TIMEZONE: z.string(),
+  AWS_BUCKET_NAME: z.string(),
+  AWS_BUCKET_ACCESS_KEY: z.string(),
+  AWS_BUCKET_SECRET_KEY: z.string(),
+  SUPABASE_URL: z.string(),
+  SUPABASE_API_KEYS: z.string(),
+  SUPABASE_SERVICE_KEYS: z.string()
 })
 
 const configServer = configSchema.safeParse(process.env)

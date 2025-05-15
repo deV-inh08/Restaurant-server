@@ -1,4 +1,4 @@
-import envConfig from '@/config'
+import envConfig from '@/config/config'
 import { DishStatus, OrderStatus, Role, TableStatus } from '@/constants/type'
 import prisma from '@/database'
 import { GuestCreateOrdersBodyType, GuestLoginBodyType } from '@/schemaValidations/guest.schema'

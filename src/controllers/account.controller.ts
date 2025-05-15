@@ -1,4 +1,4 @@
-import envConfig from '@/config'
+import envConfig from '@/config/config'
 import { PrismaErrorCode } from '@/constants/error-reference'
 import { Role, TableStatus } from '@/constants/type'
 import prisma from '@/database'

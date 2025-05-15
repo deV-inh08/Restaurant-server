@@ -1,4 +1,4 @@
-import envConfig from '@/config'
+import envConfig from '@/config/config'
 import prisma from '@/database'
 import { LoginBodyType } from '@/schemaValidations/auth.schema'
 import { RoleType, TokenPayload } from '@/types/jwt.types'

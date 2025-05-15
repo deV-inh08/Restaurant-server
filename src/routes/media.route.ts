@@ -1,7 +1,7 @@
 import { pauseApiHook, requireEmployeeHook, requireLoginedHook, requireOwnerHook } from '@/hooks/auth.hooks'
 import { FastifyInstance, FastifyPluginOptions } from 'fastify'
 import fastifyMultipart from '@fastify/multipart'
-import { uploadImage } from '@/controllers/media.controller'
+import { uploadFileSupabase, uploadImage } from '@/controllers/media.controller'
 import { UploadImageRes, UploadImageResType } from '@/schemaValidations/media.schema'
 
 export default async function mediaRoutes(fastify: FastifyInstance, options: FastifyPluginOptions) {
@@ -35,7 +35,8 @@ export default async function mediaRoutes(fastify: FastifyInstance, options: Fas
       if (!data) {
         throw new Error('Không tìm thấy file')
       }
-      const url = await uploadImage(data)
+      // const url = await uploadImage(data)
+      const url = await uploadFileSupabase(data)
       return reply.send({ message: 'Upload ảnh thành công', data: url })
     }
   )

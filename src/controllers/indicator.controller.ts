@@ -1,4 +1,4 @@
-import envConfig from '@/config'
+import envConfig from '@/config/config'
 import { OrderStatus } from '@/constants/type'
 import prisma from '@/database'
 import { formatInTimeZone } from 'date-fns-tz'

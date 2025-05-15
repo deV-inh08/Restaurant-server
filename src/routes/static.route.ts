@@ -1,4 +1,4 @@
-import envConfig from '@/config'
+import envConfig from '@/config/config'
 import fastifyStatic from '@fastify/static'
 import { FastifyInstance, FastifyPluginOptions } from 'fastify'
 import path from 'path'

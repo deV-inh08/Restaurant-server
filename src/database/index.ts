@@ -1,4 +1,4 @@
-import envConfig from '@/config'
+import envConfig from '@/config/config'
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient({
